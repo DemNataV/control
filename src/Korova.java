@@ -5,5 +5,6 @@ public class Korova
 
     public Korova(int hp, int v) {
         super(hp, v);
+        this.type = "korova";
     }
 }
