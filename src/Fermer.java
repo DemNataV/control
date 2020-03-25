@@ -11,4 +11,9 @@ public class Fermer {
         if (var > 5) wildAnimal.hp --;
 
     };
+    void eat(HomeAnimal animal){
+        if (resurs > 1) resurs = resurs -2;
+        else animal.hp = 0;
+
+    };
 }
