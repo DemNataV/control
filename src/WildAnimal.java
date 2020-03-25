@@ -50,7 +50,5 @@ public class WildAnimal {
         this.hp = hp;
     }
 
-    void attac(WildAnimal wildAnimal, HomeAnimal homeAnimal){
-        if (wildAnimal.v > homeAnimal.v) homeAnimal.hp --;
-    };
+
 }
