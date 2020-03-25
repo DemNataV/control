@@ -3,7 +3,7 @@ public class HomeAnimal {
     protected int ves;
     protected int hp;
     protected int v;
-    protected int res = 0;
+    protected int resurs = 0;
     protected String type;
 
 
@@ -53,11 +53,11 @@ public class HomeAnimal {
     }
 
     public int getRes() {
-        return res;
+        return resurs;
     }
 
     public void setRes(int res) {
-        this.res = res;
+        this.resurs = res;
     }
 
 

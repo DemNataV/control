@@ -109,7 +109,9 @@ public class Farm {
 
 
                 fermer.corm(ostHomeAnimal[i]);
+                ostHomeAnimal[i].res
             }
+
 
 
         }
