@@ -50,5 +50,14 @@ public class WildAnimal {
         this.hp = hp;
     }
 
-
+    @Override
+    public String toString() {
+        return "WildAnimal{" +
+                "name='" + name + '\'' +
+                ", ves=" + ves +
+                ", v=" + v +
+                ", sila=" + sila +
+                ", hp=" + hp +
+                '}';
+    }
 }

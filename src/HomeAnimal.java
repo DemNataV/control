@@ -61,5 +61,15 @@ public class HomeAnimal {
         this.resurs = res;
     }
 
-
+    @Override
+    public String toString() {
+        return "HomeAnimal{" +
+                "name='" + name + '\'' +
+                ", ves=" + ves +
+                ", hp=" + hp +
+                ", v=" + v +
+                ", resurs=" + resurs +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

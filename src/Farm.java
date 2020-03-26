@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Farm {
@@ -31,6 +32,15 @@ public class Farm {
 
     public void setWildAnimals(WildAnimal[] wildAnimals) {
         this.wildAnimals = wildAnimals;
+    }
+
+    @Override
+    public String toString() {
+        return "Farm{" +
+                "farmer=" + farmer +
+                ", homeAnimals=" + Arrays.toString(homeAnimals) +
+                ", wildAnimals=" + Arrays.toString(wildAnimals) +
+                '}';
     }
 
     public void addHomeAnimals(HomeAnimal... animals) {

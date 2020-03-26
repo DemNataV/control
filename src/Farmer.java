@@ -1,7 +1,12 @@
 public class Farmer {
     int resurs = 5;
 
-
+    @Override
+    public String toString() {
+        return "Farmer{" +
+                "resurs=" + resurs +
+                '}';
+    }
 
     void corm(HomeAnimal homeAnimal){
        if(homeAnimal.hp <11) homeAnimal.hp ++;//max hp = 10
