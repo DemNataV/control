@@ -1,8 +1,8 @@
-public class Krolik
+public class Rabbit
         extends HomeAnimal
         implements CanBeEaten {
-    public Krolik(int hp, int v) {
-        super(hp, v);
+    public Rabbit(int hp, int v, int ves) {
+        super(hp, v, ves);
         this.type = "krolik";
     }
 }

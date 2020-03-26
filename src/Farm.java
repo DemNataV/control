@@ -1,20 +1,20 @@
 import java.util.Random;
 
 public class Farm {
-    Fermer fermer;
+    Farmer farmer;
     HomeAnimal[] homeAnimals = new HomeAnimal[10];
-    WildAnimal[] wildAnimals = new WildAnimal[10];
+    WildAnimal[] wildAnimals = new WildAnimal[3];
 
-    public Farm(Fermer fermer) {
-        this.fermer = fermer;
+    public Farm(Farmer farmer) {
+        this.farmer = farmer;
     }
 
-    public Fermer getFermer() {
-        return fermer;
+    public Farmer getFarmer() {
+        return farmer;
     }
 
-    public void setFermer(Fermer fermer) {
-        this.fermer = fermer;
+    public void setFarmer(Farmer farmer) {
+        this.farmer = farmer;
     }
 
     public HomeAnimal[] getHomeAnimals() {
@@ -65,12 +65,12 @@ public class Farm {
 
     void attac(WildAnimal wildAnimal, HomeAnimal homeAnimal){
         int var = (int) (Math.random()*10);
-        if (var > 5) fermer.defender(wildAnimal);
+        if (var > 5) farmer.defender(wildAnimal);
         else if (wildAnimal.v > homeAnimal.v) homeAnimal.hp --;
     };
 
     void passDay(){
-        if (fermer.resurs > 2){
+        if (farmer.resurs > 2){
 
             int n2 = 0;
             for (int i = 0; i < wildAnimals.length ; i++) {
@@ -86,7 +86,7 @@ public class Farm {
                     }
                 }
 
-                fermer.resurs = fermer.resurs - 2;
+                farmer.resurs = farmer.resurs - 2;
                 int n1 = 0;
                 for (int i = 0; i < homeAnimals.length; i++) {
                     if (homeAnimals[i] != null && homeAnimals[i].hp > 0) n1++;
@@ -109,7 +109,7 @@ public class Farm {
                 for (int i = 0; i < ostHomeAnimal.length; i++) {
 
 
-                    fermer.corm(ostHomeAnimal[i]);
+                    farmer.corm(ostHomeAnimal[i]);
                     //ostHomeAnimal[i].
                 }
 
@@ -142,14 +142,14 @@ public class Farm {
                 if (n3 > 0) {
                     for (int i = 0; i < ostResAnimal.length; i++) {
                         //ostResAnimal[i].fa
-                        ((CanRes) ostResAnimal[i]).farmRes(fermer);
+                        ((CanRes) ostResAnimal[i]).farmRes(farmer);
                         //fermer.farmResurs(homeAnimals[i]);
                     }
                 }
                 else {
                     //ostResAnimal[i].fa
                 int var = random.nextInt(ostEatenAnimal.length + 1);
-                    ((CanBeEaten) ostEatenAnimal[var]).eaten(ostEatenAnimal[var], fermer);
+                    ((CanBeEaten) ostEatenAnimal[var]).eaten(ostEatenAnimal[var], farmer);
                     //fermer.farmResurs(homeAnimals[i]);
                 };
             }

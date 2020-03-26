@@ -1,4 +1,4 @@
-public class Fermer {
+public class Farmer {
     int resurs = 5;
 
 

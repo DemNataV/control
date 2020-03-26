@@ -4,5 +4,7 @@ public class Main {
         WildAnimal Fox = new WildAnimal("Fox",(int) (Math.random()*10));
         WildAnimal Bear = new WildAnimal("Bear",(int) (Math.random()*10));
 
+
+
     }
 }

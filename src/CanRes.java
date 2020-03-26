@@ -6,5 +6,5 @@ public interface CanRes {
 
     };*/
 
-    void farmRes(Fermer fermer);
+    void farmRes(Farmer farmer);
 }

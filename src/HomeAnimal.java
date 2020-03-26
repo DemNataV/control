@@ -7,9 +7,10 @@ public class HomeAnimal {
     protected String type;
 
 
-    public HomeAnimal(int hp, int v) {
+    public HomeAnimal(int hp, int v, int ves) {
         this.hp = hp;
         this.v = v;
+        this.ves = ves;
     }
 
     public String getType() {

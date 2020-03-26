@@ -1,6 +1,6 @@
 public interface CanBeEaten {
-    default void eaten(HomeAnimal homeAnimal, Fermer fermer){
+    default void eaten(HomeAnimal homeAnimal, Farmer farmer){
       homeAnimal.hp = 0;
-      fermer.resurs = fermer.resurs + homeAnimal.ves;
+      farmer.resurs = farmer.resurs + homeAnimal.ves;
     };
 }
