@@ -5,4 +5,9 @@ public class Kura
         super(hp, v);
         this.type = "kura";
     }
+
+    @Override
+    public void farmRes(Fermer fermer) {
+        fermer.resurs = fermer.resurs + (int) (Math.random()*2+4);
+    }
 }

@@ -76,7 +76,7 @@ public class Farm {
             for (int i = 0; i < wildAnimals.length ; i++) {
                 if (wildAnimals[i] != null && wildAnimals[i].hp > 0) n2 ++;
             }
-            if(n2 > 0){
+            if(n2 > 0) {
                 int nn2 = 0;
                 WildAnimal[] ostWildAnimal = new WildAnimal[n2];
                 for (int i = 0; i < wildAnimals.length; i++) {
@@ -110,7 +110,7 @@ public class Farm {
 
 
                     fermer.corm(ostHomeAnimal[i]);
-                    // ostHomeAnimal[i].res
+                    //ostHomeAnimal[i].
                 }
 
                 int n3 = 0;
@@ -139,12 +139,21 @@ public class Farm {
                     }
                 }
 
-                for (int i = 0; i < ostResAnimal.length ; i++) {
-                    ostResAnimal[i].res
+                if (n3 > 0) {
+                    for (int i = 0; i < ostResAnimal.length; i++) {
+                        //ostResAnimal[i].fa
+                        ((CanRes) ostResAnimal[i]).farmRes(fermer);
+                        //fermer.farmResurs(homeAnimals[i]);
+                    }
                 }
-
-
+                else {
+                    //ostResAnimal[i].fa
+                int var = random.nextInt(ostEatenAnimal.length + 1);
+                    ((CanBeEaten) ostEatenAnimal[var]).eaten(ostEatenAnimal[var], fermer);
+                    //fermer.farmResurs(homeAnimals[i]);
+                };
             }
+
 
              else System.out.println("Дикие животные проиграли");
         }

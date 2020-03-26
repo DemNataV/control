@@ -7,4 +7,9 @@ public class Korova
         super(hp, v);
         this.type = "korova";
     }
+
+    @Override
+    public void farmRes(Fermer fermer) {
+        fermer.resurs = fermer.resurs + (int) (Math.random()*2+5);
+    }
 }

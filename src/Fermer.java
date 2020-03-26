@@ -11,8 +11,15 @@ public class Fermer {
 
     };
     void eat(HomeAnimal animal){
-        if (resurs > 1) resurs = resurs -2;
-        else animal.hp = 0;
+       animal.hp = 0;
+       resurs =resurs + animal.ves;
 
     };
+
+    void farmResurs(HomeAnimal homeAnimal) {
+        if (homeAnimal.type.equalsIgnoreCase("korova"))  resurs = resurs + (int) (Math.random()*2+5);
+        else if (homeAnimal.type.equalsIgnoreCase("kura")) resurs = resurs + (int) (Math.random()*2+2);
+        else homeAnimal.resurs = 0;
+    };
+
 }
