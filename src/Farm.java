@@ -71,51 +71,86 @@ public class Farm {
 
     void passDay(){
         if (fermer.resurs > 2){
-            fermer.resurs = fermer.resurs -2;
-            int n1 = 0;
-            for (int i = 0; i < homeAnimals.length ; i++) {
-                if (homeAnimals[i] != null && homeAnimals[i].hp > 0) n1 ++;
-            }
-            int nn1 = 0;
-            HomeAnimal[] ostHomeAnimal = new HomeAnimal[n1];
-            for (int i = 0; i < homeAnimals.length ; i++) {
-                if (homeAnimals[i] != null && homeAnimals[i].hp > 0) {
-                    ostHomeAnimal[nn1] = homeAnimals[i];
-                    nn1++;
-                }
-            }
 
-                int n2 = 0;
-                for (int i = 0; i < wildAnimals.length ; i++) {
-                    if (wildAnimals[i] != null && wildAnimals[i].hp > 0) n2 ++;
-                }
+            int n2 = 0;
+            for (int i = 0; i < wildAnimals.length ; i++) {
+                if (wildAnimals[i] != null && wildAnimals[i].hp > 0) n2 ++;
+            }
+            if(n2 > 0){
                 int nn2 = 0;
                 WildAnimal[] ostWildAnimal = new WildAnimal[n2];
-                for (int i = 0; i < wildAnimals.length ; i++) {
+                for (int i = 0; i < wildAnimals.length; i++) {
                     if (wildAnimals[i] != null && wildAnimals[i].hp > 0) {
                         ostWildAnimal[nn2] = wildAnimals[i];
-                        nn1++;
+                        nn2++;
                     }
-
                 }
 
-            Random random = new Random();
+                fermer.resurs = fermer.resurs - 2;
+                int n1 = 0;
+                for (int i = 0; i < homeAnimals.length; i++) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0) n1++;
+                }
+                int nn1 = 0;
+                HomeAnimal[] ostHomeAnimal = new HomeAnimal[n1];
+                for (int i = 0; i < homeAnimals.length; i++) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0) {
+                        ostHomeAnimal[nn1] = homeAnimals[i];
+                        nn1++;
+                    }
+                }
+
+                Random random = new Random();
                 //int dif1 = homeAnimals.length;
 
-                attac(wildAnimals[random.nextInt(wildAnimals.length+1)],
-                        homeAnimals[random.nextInt(homeAnimals.length+1)]);
+                attac(wildAnimals[random.nextInt(wildAnimals.length + 1)],
+                        homeAnimals[random.nextInt(homeAnimals.length + 1)]);
 
-            for (int i = 0; i < ostHomeAnimal.length ; i++) {
+                for (int i = 0; i < ostHomeAnimal.length; i++) {
 
 
-                fermer.corm(ostHomeAnimal[i]);
-                ostHomeAnimal[i].res
+                    fermer.corm(ostHomeAnimal[i]);
+                    // ostHomeAnimal[i].res
+                }
+
+                int n3 = 0;
+                for (int i = 0; i < homeAnimals.length; i++) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0 && homeAnimals[i] instanceof CanRes) n3++;
+                }
+                int nn3 = 0;
+                HomeAnimal[] ostResAnimal = new HomeAnimal[n3];
+                for (int i = 0; i < homeAnimals.length; i++) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0) {
+                        ostResAnimal[nn3] = homeAnimals[i];
+                        nn3++;
+                    }
+                }
+
+                int n4 = 0;
+                for (int i = 0; i < homeAnimals.length; i++) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0 && homeAnimals[i] instanceof CanBeEaten) n4++;
+                }
+                int nn4 = 0;
+                HomeAnimal[] ostEatenAnimal = new HomeAnimal[n4];
+                for (int i = 0; i < homeAnimals.length; i++) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0) {
+                        ostEatenAnimal[nn4] = homeAnimals[i];
+                        nn4++;
+                    }
+                }
+
+                for (int i = 0; i < ostResAnimal.length ; i++) {
+                    ostResAnimal[i].res
+                }
+
+
             }
 
-
-
+             else System.out.println("Дикие животные проиграли");
         }
-        else System.out.println("fermer proigral");
+
+
+        else System.out.println("Фермер проиграл");
 
     };
 

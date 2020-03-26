@@ -5,4 +5,6 @@ public interface CanRes {
       else homeAnimal.resurs = 0;
 
     };
+
+    void farmRes();
 }
