@@ -31,8 +31,11 @@ public class Main {
         farm.addWildAnimals(wolf, fox, bear);
         farm.addHomeAnimals(cat, chicken1, chicken2, chicken3, rabbit1, rabbit2, cow);
 
-        farm.passDay();
-        System.out.println(farm.toString());
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Начлся день " + i);
+            farm.passDay();
+            System.out.println(farm.toString());
+        }
 
 
 

@@ -8,6 +8,8 @@ public class Chicken
 
     @Override
     public void farmRes(Farmer farmer) {
-        farmer.resurs = farmer.resurs + (int) (Math.random()*2+4);
+        int var = (int) (Math.random()*2+2);
+        farmer.resurs = farmer.resurs + var;
+        System.out.println("Фермер забрал ресурсы с цыпленка " + name + " " + var);
     }
 }

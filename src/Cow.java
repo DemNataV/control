@@ -10,6 +10,8 @@ public class Cow
 
     @Override
     public void farmRes(Farmer farmer) {
-        farmer.resurs = farmer.resurs + (int) (Math.random()*2+5);
+        int var = (int) (Math.random()*2+5);
+        farmer.resurs = farmer.resurs + var;
+        System.out.println("Фермер забрал ресурсы с коровы " + var);
     }
 }

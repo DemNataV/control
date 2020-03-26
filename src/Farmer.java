@@ -10,14 +10,18 @@ public class Farmer {
 
     void corm(HomeAnimal homeAnimal){
        if(homeAnimal.hp <11) homeAnimal.hp ++;//max hp = 10
+        System.out.println("Фермер покормил " + homeAnimal.name + "-" + " здоровье " + homeAnimal.hp);
     };
+
     void defender(WildAnimal wildAnimal){
          wildAnimal.hp --;
+        System.out.println("Фермер прогнал " + wildAnimal.name + " остплось посещений " + wildAnimal.hp);
 
     };
     void eat(HomeAnimal animal){
        animal.hp = 0;
        resurs =resurs + animal.ves;
+        System.out.println("Фермер съел " + animal.name);
 
     };
 

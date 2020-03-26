@@ -48,7 +48,7 @@ public class Farm {
             if (homeAnimals[i] == null) {
                 for (int j = 0; j < animals.length; j++) {
 
-                    animals[i + j] = homeAnimals[j];
+                    homeAnimals[i + j] = animals[j];
                     //System.out.println(animals[i+j].name);
 
 
@@ -63,7 +63,7 @@ public class Farm {
             if (wildAnimals[i] == null) {
                 for (int j = 0; j < animals.length; j++) {
 
-                    animals[i + j] = wildAnimals[j];
+                    wildAnimals[i + j] = animals[j];
                     //System.out.println(animals[i+j].name);
 
 
@@ -75,8 +75,17 @@ public class Farm {
 
     void attac(WildAnimal wildAnimal, HomeAnimal homeAnimal){
         int var = (int) (Math.random()*10);
-        if (var > 5) farmer.defender(wildAnimal);
-        else if (wildAnimal.v > homeAnimal.v) homeAnimal.hp --;
+        if (var > 5) {
+            farmer.defender(wildAnimal);
+        }
+        else if (wildAnimal.v > homeAnimal.v) {
+            var = (int) (Math.random()*5 + 1);
+            homeAnimal.hp = homeAnimal.hp - var;
+            System.out.println(wildAnimal.name + " напал на " + homeAnimal.name + " с уроном " + var);
+        }
+        else {
+            System.out.println(homeAnimal.name + " убежал от  " + wildAnimal.name );
+        }
     };
 
     void passDay(){
@@ -113,8 +122,8 @@ public class Farm {
                 Random random = new Random();
                 //int dif1 = homeAnimals.length;
 
-                attac(wildAnimals[random.nextInt(wildAnimals.length + 1)],
-                        homeAnimals[random.nextInt(homeAnimals.length + 1)]);
+                attac(ostWildAnimal[(int)(Math.random()*ostWildAnimal.length)],
+                        ostHomeAnimal[(int)(Math.random()*ostHomeAnimal.length)]);
 
                 for (int i = 0; i < ostHomeAnimal.length; i++) {
 
@@ -130,7 +139,7 @@ public class Farm {
                 int nn3 = 0;
                 HomeAnimal[] ostResAnimal = new HomeAnimal[n3];
                 for (int i = 0; i < homeAnimals.length; i++) {
-                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0 && homeAnimals[i] instanceof CanRes) {
                         ostResAnimal[nn3] = homeAnimals[i];
                         nn3++;
                     }
@@ -143,7 +152,7 @@ public class Farm {
                 int nn4 = 0;
                 HomeAnimal[] ostEatenAnimal = new HomeAnimal[n4];
                 for (int i = 0; i < homeAnimals.length; i++) {
-                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0) {
+                    if (homeAnimals[i] != null && homeAnimals[i].hp > 0 && homeAnimals[i] instanceof CanBeEaten) {
                         ostEatenAnimal[nn4] = homeAnimals[i];
                         nn4++;
                     }
