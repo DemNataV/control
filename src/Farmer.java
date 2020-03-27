@@ -9,12 +9,13 @@ public class Farmer {
     }
 
     void corm(HomeAnimal homeAnimal){
+        //System.out.println(homeAnimal.name+homeAnimal.hpmax);
        if(homeAnimal.hp > 0 && homeAnimal.hp < homeAnimal.hpmax) {
            homeAnimal.hp++;//max hp = 10
 
            System.out.println("Фермер покормил " + homeAnimal.name + " -" + " здоровье " + homeAnimal.hp);
        }
-        System.out.println("Фермер покормил " + homeAnimal.name + " -" + " здоровье " + homeAnimal.hp);
+       else if (homeAnimal.hp > 0) System.out.println("Фермер покормил " + homeAnimal.name + " -" + " здоровье " + homeAnimal.hp);
     };
 
     void defender(WildAnimal wildAnimal){

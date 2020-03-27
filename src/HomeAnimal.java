@@ -8,13 +8,20 @@ public class HomeAnimal {
     protected String type;
 
 
-    public HomeAnimal(int v, int ves) {
+    public HomeAnimal(int v, int ves, int hpmax) {
         //this.hp = hp;
         this.v = v;
         this.ves = ves;
+        this.hpmax = hpmax;
     }
 
+    public int getHpmax() {
+        return hpmax;
+    }
 
+    public void setHpmax(int hpmax) {
+        this.hpmax = hpmax;
+    }
 
     public int getResurs() {
         return resurs;
@@ -78,6 +85,7 @@ public class HomeAnimal {
                 "name='" + name + '\'' +
                 ", ves=" + ves +
                 ", hp=" + hp +
+                ", hpmax=" + hpmax +
                 ", v=" + v +
                 ", resurs=" + resurs +
                 ", type='" + type + '\'' +
