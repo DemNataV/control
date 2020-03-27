@@ -82,6 +82,8 @@ public class Farm {
             var = (int) (Math.random()*5 + 1);
             homeAnimal.hp = homeAnimal.hp - var;
             System.out.println(wildAnimal.name + " напал на " + homeAnimal.name + " с уроном " + var);
+            if (homeAnimal.hp > 0) System.out.println("Здоровье " + homeAnimal.name + " - " + homeAnimal.hp);
+            else System.out.println(homeAnimal.name + " умер");
         }
         else {
             System.out.println(homeAnimal.name + " убежал от  " + wildAnimal.name );
@@ -126,7 +128,6 @@ public class Farm {
                         ostHomeAnimal[(int)(Math.random()*ostHomeAnimal.length)]);
 
                 for (int i = 0; i < ostHomeAnimal.length; i++) {
-
 
                     farmer.corm(ostHomeAnimal[i]);
                     //ostHomeAnimal[i].

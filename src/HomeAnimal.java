@@ -2,15 +2,26 @@ public class HomeAnimal {
     protected String name;
     protected int ves;
     protected int hp;
+    protected int hpmax;
     protected int v;
     protected int resurs = 0;
     protected String type;
 
 
-    public HomeAnimal(int hp, int v, int ves) {
-        this.hp = hp;
+    public HomeAnimal(int v, int ves) {
+        //this.hp = hp;
         this.v = v;
         this.ves = ves;
+    }
+
+
+
+    public int getResurs() {
+        return resurs;
+    }
+
+    public void setResurs(int resurs) {
+        this.resurs = resurs;
     }
 
     public String getType() {

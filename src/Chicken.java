@@ -1,15 +1,21 @@
 public class Chicken
         extends HomeAnimal
         implements CanRes, CanBeEaten {
-    public Chicken(int hp, int v, int ves) {
-        super(hp, v, ves);
+
+    int hpmax = 3;
+
+    public Chicken(int v, int ves) {
+        super(v, ves);
         this.type = "kura";
+        this.hp = hpmax;
     }
 
     @Override
     public void farmRes(Farmer farmer) {
-        int var = (int) (Math.random()*2+2);
-        farmer.resurs = farmer.resurs + var;
-        System.out.println("Фермер забрал ресурсы с цыпленка " + name + " " + var);
+        if (hp > 0) {
+            int var = (int) (Math.random() * 2 + 2);
+            farmer.resurs = farmer.resurs + var;
+            System.out.println("Фермер забрал ресурсы с цыпленка " + name + " " + var);
+        }
     }
 }

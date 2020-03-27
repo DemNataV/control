@@ -1,8 +1,10 @@
 public class Rabbit
         extends HomeAnimal
         implements CanBeEaten {
-    public Rabbit(int hp, int v, int ves) {
-        super(hp, v, ves);
+    int hpmax = 5;
+    public Rabbit(int v, int ves) {
+        super(v, ves);
         this.type = "krolik";
+        this.hp = hpmax;
     }
 }

@@ -1,6 +1,11 @@
 public class Cat extends HomeAnimal {
-    public Cat(int hp, int v, int ves) {
-        super(hp, v, ves);
+
+    int hpmax = 5;
+
+    public Cat(int v, int ves) {
+
+        super(v, ves);
         this.type = "kot";
+        this.hp = hpmax;
     }
 }
