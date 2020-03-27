@@ -25,7 +25,7 @@ public class Farmer {
     };
     void eat(HomeAnimal animal){
        animal.hp = 0;
-       resurs =resurs + animal.ves;
+       resurs = resurs + animal.ves;
         System.out.println("Фермер съел " + animal.name);
 
     };

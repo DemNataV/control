@@ -75,7 +75,7 @@ public class Farm {
 
     void attac(WildAnimal wildAnimal, HomeAnimal homeAnimal){
         int var = (int) (Math.random()*10);
-        if (var > 8) {
+        if (var > 7) {
             farmer.defender(wildAnimal);
         }
         else if (wildAnimal.v > homeAnimal.v) {
@@ -125,8 +125,8 @@ public class Farm {
                 Random random = new Random();
                 //int dif1 = homeAnimals.length;
 
-                attac(ostWildAnimal[(int)(Math.random()*ostWildAnimal.length)],
-                        ostHomeAnimal[(int)(Math.random()*ostHomeAnimal.length)]);
+                attac(ostWildAnimal[(int)(Math.random()*(ostWildAnimal.length-1))],
+                        ostHomeAnimal[(int)(Math.random()*(ostHomeAnimal.length-1))]);
 
                 for (int i = 0; i < ostHomeAnimal.length; i++) {
 
@@ -156,6 +156,7 @@ public class Farm {
                 for (int i = 0; i < homeAnimals.length; i++) {
                     if (homeAnimals[i] != null && homeAnimals[i].hp > 0 && homeAnimals[i] instanceof CanBeEaten) {
                         ostEatenAnimal[nn4] = homeAnimals[i];
+                        //System.out.println(ostEatenAnimal[nn4].name);
                         nn4++;
                     }
                 }
@@ -169,7 +170,9 @@ public class Farm {
                 }
                 else {
                     //ostResAnimal[i].fa
-                int var1 = (int)(Math.random()*ostEatenAnimal.length);
+                int var1 = (int)(Math.random()*(ostEatenAnimal.length-1));
+                    System.out.println(var1);
+                    System.out.println(ostEatenAnimal);
                     //((CanBeEaten) ostEatenAnimal[var1]).eaten(ostEatenAnimal[var1], farmer);
                     //fermer.farmResurs(homeAnimals[i]);
                     farmer.eat(ostEatenAnimal[var1]);
